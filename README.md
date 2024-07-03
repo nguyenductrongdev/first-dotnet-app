@@ -16,3 +16,8 @@ GO
 CREATE TABLE Student (Id INT PRIMARY KEY, Name NVARCHAR(50));
 GO
 ```
+
+# Starts
+```
+dotnet run
+```

@@ -136,3 +136,4 @@ C:\Users\Admin\source\repos\FirstProject\bin\Debug\net8.0\runtimes\win\lib\net6.
 C:\Users\Admin\source\repos\FirstProject\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Admin\source\repos\FirstProject\obj\Debug\net8.0\FirstProject.csproj.AssemblyReference.cache
 C:\Users\Admin\source\repos\FirstProject\obj\Debug\net8.0\FirstPro.5031491B.Up2Date
+C:\Users\Admin\source\repos\FirstProject\obj\Debug\net8.0\FirstProject.sourcelink.json

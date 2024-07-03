@@ -9,6 +9,6 @@ namespace FirstProject.Models.Entities
         {
         }
 
-        public DbSet<Student> Students { get; set; }
+        public DbSet<Student> Student { get; set; }
     }
 }

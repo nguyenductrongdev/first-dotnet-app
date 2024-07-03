@@ -1,4 +1,5 @@
 ﻿using FirstProject.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,30 +14,31 @@ namespace FirstProject.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<Student>> Get(int id)
+        public async Task<ActionResult<Student>> Details(int id)
         {
-            var learn = await _context.Students.FindAsync(id);
-
-            if (learn == null)
+            var student = await _context.Student.FindAsync(id);
+            if (student == null)
             {
                 return NotFound();
             }
 
-            return learn;
+            return student;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Student>>> GetAll()
+        public async Task<ActionResult<List<Student>>> GetAll()
         {
-            return await _context.Students.ToListAsync();
+            var students = await _context.Student.ToListAsync();
+            return students;
         }
 
         [HttpPost]
-        public async Task<ActionResult<Student>> Create(Student student)
+        [AllowAnonymous]
+        public async Task<ActionResult<Student>> Create([FromBody] Student student)
         {
-            _context.Students.Add(student);
+            _context.Student.Add(student);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(Get), new { id = student.Id }, student);
+            return CreatedAtAction(nameof(Details), new { id = student.Id }, student);
         }
     }
 }
